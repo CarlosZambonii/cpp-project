@@ -1,0 +1,9 @@
+# 🔒 Nunca commitar segredos
+config/*.env
+
+# Build
+crud
+*.o
+
+# Docker volumes
+docker/data/

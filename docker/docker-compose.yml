@@ -1,0 +1,39 @@
+version: "3.9"
+
+services:
+  mariadb:
+    image: mariadb:11
+    container_name: crud-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: Xzone123
+      MYSQL_DATABASE: login_system
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./01-init.sql:/docker-entrypoint-initdb.d/01-init.sql
+    networks:
+      - crud-net
+
+  app:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile
+    container_name: crud-app
+    depends_on:
+      - mariadb
+    environment:
+      DB_HOST: mariadb
+      DB_USER: root
+      DB_PASS: Xzone123
+      DB_NAME: login_system
+      DB_PORT: "3306"
+    stdin_open: true
+    tty: true
+    networks:
+      - crud-net
+    command: ["/app/crud"]
+
+networks:
+  crud-net:
+    driver: bridge
