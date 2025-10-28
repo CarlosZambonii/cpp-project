@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="docs/banner.jpgg" alt="CRUD Extreme Banner" width="100%">
+  <img src="docs/banner.jpg" alt="CRUD Extreme Banner" width="100%">
 </p>
 
 <h1 align="center">CRUD Extreme — The Ultimate C++ Evolution</h1>
@@ -61,7 +61,7 @@ Architectural diagram: `docs/architecture-diagram.png`
 
 ---
 
-## 🛠 Tech Stack
+##  Tech Stack
 
 | Category | Technologies |
 |---------|--------------|
