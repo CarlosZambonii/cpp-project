@@ -1,6 +1,4 @@
-<p align="center">
-  <img src="docs/banner.jpg" alt="CRUD Extreme Banner" width="100%">
-</p>
+
 
 <h1 align="center">CRUD Extreme — The Ultimate C++ Evolution</h1>
 
