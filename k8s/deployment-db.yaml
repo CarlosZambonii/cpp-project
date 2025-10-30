@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: crud-db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: crud-db
+  template:
+    metadata:
+      labels:
+        app: crud-db
+    spec:
+      containers:
+      - name: crud-db
+        image: mariadb:11
+        env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: Xzone123
+        - name: MYSQL_DATABASE
+          value: login_system
+        ports:
+        - containerPort: 3306
+volumeMounts:
+  - name: mariadb-storage
+    mountPath: /var/lib/mysql
+
+volumes:
+  - name: mariadb-storage
+    persistentVolumeClaim:
+      claimName: mariadb-pvc
