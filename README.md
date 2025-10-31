@@ -1,83 +1,113 @@
-
-
-<h1 align="center">CRUD Extreme — The Ultimate C++ Evolution</h1>
-
-<p align="center">
-   From a simple CLI CRUD to a Cloud-Ready, DevOps-driven, AI-powered system.  
-  <br>
-  Built for learning. Designed for production.
-</p>
+<h1 align="center"> CRUD Extreme — C++ DevOps Evolution Project</h1>
 
 <p align="center">
   <img src="https://img.shields.io/badge/C++-17-blue?logo=cplusplus">
   <img src="https://img.shields.io/badge/MariaDB-Running-blue?logo=mariadb">
   <img src="https://img.shields.io/badge/Docker-Enabled-blue?logo=docker">
+  <img src="https://img.shields.io/badge/Kubernetes-Ready-blue?logo=kubernetes">
   <img src="https://img.shields.io/badge/Linux-WSL2-success?logo=linux">
 </p>
 
 ---
 
-##  Project Description
+###  About the Project
 
-CRUD Extreme is a professional-grade evolution of a simple CRUD written in C++.  
-It progressively integrates DevOps, Cloud, Security, Monitoring, and AI features —  
-until reaching **enterprise-level production standards**.
+CRUD Extreme started as a **simple C++ CRUD** and is evolving into a **full enterprise-grade stack** using:
+✅ DevOps ✅ Cloud ✅ Security ✅ Observability ✅ Scalability ✅ AI
 
- Current focus: **Containerization & Runtime automation**  
- Docker integration completed
+Each milestone upgrades the project into a more powerful professional system 🚀
 
 ---
 
-##  Architecture Overview
+##  Technologies Used
 
-🔹 Clean and scalable folder structure  
-🔹 Modern C++ (RAII, smart pointers, lambdas, patterns)  
-🔹 MariaDB with UUID-based primary keys  
-🔹 Fully Dockerized and orchestrated
-
-Full technical documentation is available inside **docs/**   
-Architectural diagram: `docs/architecture-diagram.png`
-
----
-
-##  Roadmap — CRUD EXTREME
-
-| Stage | Status | Description |
-|------|:----:|-------------|
-| **1️⃣ C++ CRUD + MariaDB + DAO Pattern** |  | Functional database CRUD with UUID |
-| **2️⃣ Dockerization** |  | Containers ready for production |
-| **3️⃣ Kubernetes + Minikube** |  | Deploy inside a real cluster |
-| **4️⃣ Security (JWT + Secrets + bcrypt)** |  | Strong authentication and protection |
-| **5️⃣ CI/CD with GitHub Actions** |  | Automated builds/tests/deploy |
-| **6️⃣ Monitoring (Prometheus + Grafana)** |  | Metrics + observability dashboards |
-| **7️⃣ Cloud Deploy (AWS EKS)** |  | Cluster running in the cloud |
-| **8️⃣ AI (Password Advisor)** |  | Strength validation & recommendations |
-| **9️⃣ Web Dashboard (React + Tailwind)** |  | Full UI consuming REST API |
-| **🔟 Enterprise Showcase & Docs** |  | Complete release & case study |
-
->  *Updated as the project evolves. Stay tuned!*
-
----
-
-##  Tech Stack
-
-| Category | Technologies |
-|---------|--------------|
-| Language | C++17 |
+| Area | Tools / Tech |
+|------|--------------|
+| Programming | C++17, Standard Library, RAII, Lambdas |
 | Database | MariaDB 11 |
-| Packaging | Docker + Docker Compose |
-| Platform | Linux (WSL2) |
-| Architecture | DAO, Singleton, Clean Structure |
-| ID System | UUIDv4 generator |
-| Build Tools | g++, CMake (coming soon) |
+| Containers | Docker, Docker Compose |
+| Orchestration | Kubernetes (Minikube + Ingress) |
+| Architecture | DAO, Singleton, Clean Code |
+| Logging | Timestamp logs with `<chrono>` |
+| Security (coming next) | JWT + Argon2/Bcrypt |
+| Monitoring | Prometheus + Grafana *(Future)* |
+| Cloud | AWS EKS *(Future)* |
+| UI | REST API + React *(Future)* |
 
 ---
 
-##  How to Run (Docker)
+## ✅ Stage 1 — C++ CRUD + Clean Architecture
 
-```bash
-# Run complete environment (DB + App)
-./scripts/deploy_docker.sh
+✔ Full CRUD operations  
+✔ UUID v4 for user IDs  
+✔ Secure SQL escaping (avoid injection)  
+✔ Layered architecture:  
+➡️ `Database` (**Singleton**)  
+➡️ `UserDAO` (**DAO Pattern**)  
 
-# In another terminal: access the app menu
-docker exec -it crud-app ./crud
+Code execution (local):
+```sh
+g++ src/*.cpp -Iinclude $(mysql_config --cflags --libs) -std=gnu++17 -o crud
+./crud
+✅ Stage 2 — Dockerization
+✔ Multi-container application using Docker Compose
+✔ MariaDB initialization using SQL script
+✔ ENV-based DB configuration
+✔ Portable and production-ready execution
+
+Run:
+
+sh
+Copiar código
+docker compose up --build
+✅ Stage 3 — Kubernetes + Ingress
+The project now runs in a real orchestrated infrastructure 🎯
+
+✔ Deployments (App + DB)
+✔ ClusterIP Services
+✔ Ingress exposing: http://crud.local
+✔ Logs and pod lifecycle managed by Kubernetes
+
+Useful commands:
+
+sh
+Copiar código
+kubectl apply -f k8s/
+kubectl get pods
+kubectl get svc
+kubectl get ingress
+minikube addons enable ingress
+minikube tunnel
+The app is still console-based → REST API comes on Stage 8
+
+🪜 Overall Progress Roadmap
+Stage	Status
+CRUD + Database	✅
+Docker	✅
+Kubernetes	✅
+Security (hashed passwords + JWT)	🔜
+CI/CD Pipeline	🔜
+Monitoring + Observability	🔜
+Cloud (AWS EKS) Deployment	🔜
+REST API (Web Access)	🔜
+Frontend (React Dashboard)	🔜
+Enterprise Mode (IaC, TLS, Scaling)	🔜
+
+Goal & Learning Outcomes
+Develop modern and scalable C++ backend solutions
+Showcase DevOps, security, and cloud engineering skills
+Target international job opportunities in backend/cloud roles
+
+This project demonstrates real-world software engineering maturity
+
+ Author
+Carlos Zamboni
+Backend Developer • C++ • DevOps • Cloud
+Brazil
+Open to remote international jobs
+
+GitHub: https://github.com/CarlosZambonii
+
+ Want to support the project?
+Give a star  on GitHub and follow the evolution!
+Next milestone → Security Stage 
